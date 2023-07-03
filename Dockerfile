@@ -1,4 +1,4 @@
-# Use Ubuntu 18.04 LTS as our base image.
+# Use Ubuntu 22.04 LTS as our base image.
 FROM ubuntu:22.04
 
 # The Rust toolchain to use when building our image.  Set by `hooks/build`.
