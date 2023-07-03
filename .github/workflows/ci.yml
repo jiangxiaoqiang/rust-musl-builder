@@ -41,6 +41,7 @@ jobs:
       - test_image
 
     strategy:
+      fail-fast: false
       matrix:
         # We build multiple versions of the image from the same Dockerfile each
         # time we push. This is different that the standard strategy for
