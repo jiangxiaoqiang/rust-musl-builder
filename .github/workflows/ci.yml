@@ -36,6 +36,9 @@ jobs:
   build_and_push:
     name: Build image & push
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
 
     needs:
       - test_image
@@ -86,7 +89,9 @@ jobs:
             TOOLCHAIN=${{ matrix.toolchain }}
           # Use some slightly funky substituations to tag only `stable` as `latest`.
           tags: |
+            ghcr.io/jiangxiaoqiang/rust-musl-builder:${{ matrix.toolchain }}
             jiangxiaoqiang/rust-musl-builder:${{ matrix.toolchain }}
+            ${{ matrix.toolchain == 'stable' && 'ghcr.io/jiangxiaoqiang/rust-musl-builder:latest' || '' }}
             ${{ matrix.toolchain == 'stable' && 'jiangxiaoqiang/rust-musl-builder:latest' || '' }}
           labels: |
             org.opencontainers.image.title=rust-musl-builder
