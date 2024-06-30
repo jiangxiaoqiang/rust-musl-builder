@@ -26,7 +26,7 @@ jobs:
 
     steps:
       - name: Check out the repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       # Run some fairly extensive tests to make sure that we actually produce
       # static, working programs.
