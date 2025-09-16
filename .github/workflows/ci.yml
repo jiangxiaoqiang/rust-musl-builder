@@ -54,7 +54,7 @@ jobs:
         toolchain:
           - "stable"
           - "beta"
-          - "1.84.0"
+          - "1.85.0"
 
           # See https://rust-lang.github.io/rustup-components-history/ and choose
           # the newest nightly build that has all the components (except RLS,
